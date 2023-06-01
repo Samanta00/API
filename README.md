@@ -1,9 +1,6 @@
 # Projeto guiado para vaga de desenvolvimento Back-end
 
 ### autor(a): 'Ellen Samanta Nunes da Silva'
-### Vídeo explicativo sobre o projeto encontrado em : https://www.youtube.com/watch?v=_VuXWYnqtT8&feature=youtu.be
-
-## Afim de divulgar uma demonstração sobre os conhecimentos adquiridos em Back-end foi feito um Projeto Implementado com React, Node, Jest, Typescript, MongoDB, javascript, Html e css.
 
 ## Para adquirir o uso do projeto você pode seguir as instruções que serão passadas:
 
