@@ -1,5 +1,5 @@
 const dataSchema = require('../models/customersSchema')
-const mongoose = require('mongoose')
+const dataNewUser = require('../models/newUserSchema')
 const jwt = require('jsonwebtoken')
 const SECRET = 'ellen'
 
@@ -11,6 +11,22 @@ import { Request, Response } from 'express'
 export const getAll = async (req: Request, res: Response) => {
     try {
         const notes = await dataSchema.find()
+        return res.status(200).json(notes)
+
+    }
+    catch (err: unknown) {
+        const error = err as String
+        res.status(500).json({ message: error })
+
+    }
+}
+
+
+
+
+export const getAllRegister = async (req: Request, res: Response) => {
+    try {
+        const notes = await dataNewUser.find()
         return res.status(200).json(notes)
 
     }
@@ -35,6 +51,30 @@ export const getPeople = async (req: Request, res: Response) => {
 
     }
 }
+
+// criar método para cadastrar uma Pessoa 
+export const createNewUser = async (req: Request, res: Response) => {
+    try {
+        const { email, senha } = req.body;
+
+        if (!email.trim() || email == undefined || email.length <= 1 || email == "") {
+            console.log('O Email está sendo Passado indefinidamente.');
+        } else if (!senha.trim() || senha == undefined || senha.length < 11 || senha == "") {
+            console.log('A senha está sendo passado indefinidamente, crie uma senha maior do que 11 caracteres.');
+        } else {
+            const newNoteRegister = new dataNewUser({
+                email: email,
+                senha: senha
+            });
+
+            const savedNote = await newNoteRegister.save();
+            res.status(201).json(savedNote);
+        }
+    } catch (err: unknown) {
+        const error = err as string;
+        res.status(500).json({ message: error });
+    }
+};
 
 // criar método para cadastrar uma Pessoa 
 export const createRegistration = async (req: Request, res: Response) => {
@@ -63,8 +103,7 @@ export const createRegistration = async (req: Request, res: Response) => {
                 email: email,
                 telefone: telefone,
                 endereco: endereco,
-                cpf: cpf,
-                _id: new mongoose.Types.ObjectId()
+                cpf: cpf
             })
 
             const savedNote = await newNote.save()

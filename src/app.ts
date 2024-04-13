@@ -7,7 +7,7 @@ import express from 'express';
 
 import autenticacaoRota from './routes/authenticationRoutes'
 
-import * as db from './database/mongoConfig'
+import * as db from './database/postgreConfig'
 
 import customersRoutes from '../src/routes/customersRoutes'
 

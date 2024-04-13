@@ -1,22 +1,34 @@
-const jwt = require('jsonwebtoken')
-const SECRET = process.env.SECRET;
+// authenticationController.ts
 
-import { Request, Response } from 'express'
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import { Request, Response } from 'express';
+const userSchema= require("../models/newUserSchema")
 
-// gerar identificador de acesso para entrar no sistema
-export const gerarToken = (req: Request, res: Response) => {
-    const { nome, senha } = req.body
-    console.log(nome, senha)
-    if (nome === 'desafiosharenergy' && senha === 'sh@r3n3rgy') {
-        const token = jwt.sign({ userId: 1 }, SECRET, { expiresIn: "30d" });
-        return res.json({ tipo: "Bearer", token })
+const SECRET = process.env.SECRET || 'sua-chave-secreta-padrão';
+
+export const gerarToken = async (req: Request, res: Response) => {
+    const { email, senha } = req.body;
+    try {
+        const user = await userSchema.findOne({ where: { email } });
+
+        if (user.email) {
+
+            if (senha===user.senha) {
+                const token = jwt.sign({ userId: user.id }, SECRET, { expiresIn: '30d' });
+                user.token = token;
+                await user.save();
+                console.log('Usuário autenticado com sucesso.');
+                return res.json({ tipo: 'Bearer', token });
+            }
+          
+           
+        }
+
+        console.log('Credenciais inválidas.');
+        res.status(401).end();
+    } catch (error) {
+        console.error('Erro ao gerar o token:', error);
+        res.status(500).json({ message: 'Erro ao gerar o token.' });
     }
-    res.status(401).end()
-}
-
-
-
-// module.exports={
-//     gerarToken
-// }
-//sempre que precisa importar coisas dentro não é export default 
+};
