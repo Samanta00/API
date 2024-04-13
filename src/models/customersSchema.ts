@@ -2,32 +2,22 @@ const { DataTypes } = require('sequelize');
 import sequelize from '../database/postgreConfig';
 
 
-const Data = sequelize.define('Data', {
+const Data = sequelize.define('registro_tarefas', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  nome: {
+  descricao: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  telefone: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  endereco: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  cpf: {
+  atividade: {
     type: DataTypes.STRING,
     allowNull: false
   }
-});
+}, {
+  timestamps: false // Esta opção desativa a adição automática dos campos createdAt e updatedAt
+  });
 
 module.exports = Data;

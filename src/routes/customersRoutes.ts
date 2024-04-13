@@ -13,24 +13,20 @@ const { verificarToken } = require("../middlewares/identificacao")
 
 
 // DEMANDA: visualizar todas as Pessoas cadastradas
-router.get("/", verificarToken, controller.getAll)
+router.get("/", controller.getAll)
 
-router.get("/novos", controller.getAllRegister)
 
 // DEMANDA: visualizar uma Pessoa cadastrada
-router.get("/:id", controller.getPeople)
-
-
-router.post("/newUser", controller.createNewUser)
+router.get("/:id", controller.getPerson)
 
 
 // DEMANDA: cadastrar uma Pessoa
 router.post("/", controller.createRegistration)
 
 // DEMANDA: atualizar dados de uma Pessoa
-router.put("/:id",verificarToken, controller.updatePeopleById)
+router.put("/:id", controller.updatePeopleById)
 
 // DEMANDA: excluir uma Pessoa
-router.delete("/:id",verificarToken, controller.deletePeopleById)
+router.delete("/:id", controller.deletePeopleById)
 
 export default router;
