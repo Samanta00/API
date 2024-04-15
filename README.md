@@ -18,8 +18,19 @@
 ### 6° Para rodar os testes feito em jest, você precisa ir no terminal da pasta chamada Api e dar um npm run test
 
 ### 7° Caso o projeto venha sem alguns arquivos no .env será necessário criar novamente um .env passando a url de um banco mongoose, banco necessário para o armazenamento de dados, e uma senha secreta para o secret, função necessária para gerar um usuário autenticado, imagens abaixo são como o exemplo esperado
-<img src='src/assets/img/env1.jpeg'>
-<img src='src/assets/img/env2.jpeg'>
+<img src='src/assets/img/secret.jpeg'>
+
+### note que em cima inseri a conexão de banco de dados em postgreesql, essa conexão está sendo executada em um servidor e você pode utilizar ela, insira:
+
+DB_CONNECTION=pgsql
+DB_HOST=bubble.db.elephantsql.com
+DB_PORT=5432
+DB_DATABASE=uwljdmrg
+DB_USERNAME=uwljdmrg
+DB_PASSWORD=eDk6AaI_bcx6CBAauP6mDd-IA8mo7S8N
+
+
+SECRET = 123
 
 ## Arquitetura do Projeto em Back-end
 <img src='src/assets/img/arquiteturaApi.jpeg'>
