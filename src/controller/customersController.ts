@@ -106,7 +106,7 @@ export const deletePeopleById = async (req: Request, res: Response) => {
         await peopleFound.destroy()
 
         res.status(200).json({
-            mensagem: `Pessoa com o email:'${peopleFound.email}' deletada com sucesso!`
+            mensagem: `Tarefa deletada com sucesso!`
         })
 
     }
