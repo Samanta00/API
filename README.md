@@ -27,7 +27,7 @@
 ## Testes validados pelo Jest
 <img src='src/assets/img/testes.jpeg'>
 
-# Getting Started with Create React App
+
 
 
 ### 8° você vai ter acesso as seguintes rotas:
@@ -43,7 +43,12 @@ PUT: http://localhost:8081/customers/:ID
 #### para deletar uma atividade
 DELETE: http://localhost:8081/customers/:ID
 
+<img src='![image](https://github.com/Samanta00/API/assets/80990432/22700014-5ef7-49ef-b6bc-51a12bed72b1)'>
+<img src='![image](![image](https://github.com/Samanta00/API/assets/80990432/a05176fa-1c54-4042-a1ae-349469eb6575))'>
+<img src='![image](![image](https://github.com/Samanta00/API/assets/80990432/91409390-25c1-430a-b262-654917fec6d4))>
 
+
+# Getting Started with Create React App
 
 
 
