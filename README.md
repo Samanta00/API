@@ -1,4 +1,4 @@
-# Projeto guiado para vaga de desenvolvimento Back-end
+# Projeto guiado para a utilização de uma API-Backend
 
 ### autor(a): 'Ellen Samanta Nunes da Silva'
 
