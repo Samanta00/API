@@ -22,15 +22,15 @@
 
 ### note que em cima inseri a conexão de banco de dados em postgreesql, essa conexão está sendo executada em um servidor e você pode utilizar ela, insira:
 
-DB_CONNECTION=pgsql
-DB_HOST=bubble.db.elephantsql.com
-DB_PORT=5432
-DB_DATABASE=uwljdmrg
-DB_USERNAME=uwljdmrg
-DB_PASSWORD=eDk6AaI_bcx6CBAauP6mDd-IA8mo7S8N
+## DB_CONNECTION=pgsql
+## DB_HOST=bubble.db.elephantsql.com
+## DB_PORT=5432
+## DB_DATABASE=uwljdmrg
+## DB_USERNAME=uwljdmrg
+## DB_PASSWORD=eDk6AaI_bcx6CBAauP6mDd-IA8mo7S8N
 
 
-SECRET = 123
+## SECRET = 123
 
 ## Arquitetura do Projeto em Back-end
 <img src='src/assets/img/arquiteturaApi.jpeg'>
