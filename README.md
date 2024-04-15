@@ -30,6 +30,23 @@
 # Getting Started with Create React App
 
 
+### 8° você vai ter acesso as seguintes rotas:
+#### para visualizar todas as atividades já salvas
+GET: http://localhost:8081/customers/
+
+#### para inserir uma atividade nova
+POST: http://localhost:8081/customers/
+
+#### para editar uma atividade
+PUT: http://localhost:8081/customers/:ID
+
+#### para deletar uma atividade
+DELETE: http://localhost:8081/customers/:ID
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
